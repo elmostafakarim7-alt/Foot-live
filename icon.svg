@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#102746"/>
+  <circle cx="256" cy="245" r="170" fill="#fff"/>
+  <path d="m256 145 69 50-26 81h-86l-26-81z" fill="#102746"/>
+  <path d="m256 145 69 50 74-24 28 86-102 19-26 81-43 66-75-51-11-96-83-48 31-83 74 24z"
+        fill="none" stroke="#102746" stroke-width="16" stroke-linejoin="round"/>
+  <text x="256" y="455" font-family="Arial,sans-serif" font-size="42"
+        font-weight="700" text-anchor="middle" fill="#fff">FOOT LIVE</text>
+</svg>
