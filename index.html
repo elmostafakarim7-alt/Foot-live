@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102746">
+<meta name="description" content="Foot Live — دليل قانوني للمباريات المجانية في إيطاليا">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Foot Live | Calcio legale e gratuito</title>
+<style>
+:root{color-scheme:light;--navy:#102746;--blue:#2563eb;--ink:#17243a;--muted:#63738b;--bg:#f3f6fb;--line:#e1e8f1;--green:#167447;--greenbg:#e8f7ef;--amber:#76520a;--amberbg:#fff5d9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+button,select{font:inherit}.shell{max-width:1050px;margin:auto;padding:20px}
+header{background:linear-gradient(135deg,#102746,#1b4775);color:white;border-radius:24px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;box-shadow:0 12px 30px #10274622}
+.brand{display:flex;align-items:center;gap:13px}.logo{width:52px;height:52px;border-radius:16px;background:#ffffff18;display:grid;place-items:center;font-size:26px}
+h1{font-size:clamp(25px,4vw,34px);margin:0;letter-spacing:.3px}header p{margin:5px 0 0;color:#d6e4f5}
+.controls{display:flex;gap:8px;flex-wrap:wrap}select,.install{border:1px solid #ffffff55;background:#fff;color:#17243a;border-radius:11px;padding:10px 13px}
+.install{display:none;cursor:pointer;font-weight:700}.install.show{display:inline-block}
+.notice{margin:16px 0;padding:13px 15px;border-radius:13px;background:var(--amberbg);color:var(--amber);border:1px solid #f0dda5;font-size:14px;line-height:1.55}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:24px 2px 13px;flex-wrap:wrap}
+.section-head h2{font-size:21px;margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:white;color:var(--ink);border-radius:99px;padding:8px 13px;cursor:pointer}.filter.active{background:var(--navy);color:white;border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:15px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 5px 18px #10274608;display:flex;flex-direction:column}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.provider{font-size:16px;font-weight:800}.pill{font-size:11px;font-weight:750;border-radius:99px;padding:6px 9px;background:var(--greenbg);color:var(--green);white-space:nowrap}
+.pill.limited{background:#eaf1ff;color:#234e9a}.pill.pending{background:var(--amberbg);color:var(--amber)}
+.card h3{font-size:20px;line-height:1.25;margin:17px 0 5px}.sub{font-size:13px;color:var(--muted);line-height:1.5}
+.details{padding-inline-start:19px;line-height:1.65;font-size:14px;margin:14px 0}.details li{margin:5px 0}
+.meta{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.55}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.links a{font-size:13px;text-decoration:none;color:var(--blue);font-weight:750;border:1px solid #d8e4fa;border-radius:10px;padding:8px 10px}.links a:hover{background:#f0f5ff}
+.status{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}.dot{width:8px;height:8px;background:#d99a16;border-radius:50%}
+footer{margin:25px 2px 10px;color:var(--muted);font-size:12px;line-height:1.7}
+.empty{display:none;background:white;border:1px dashed var(--line);padding:25px;border-radius:15px;color:var(--muted);text-align:center}
+@media(max-width:560px){.shell{padding:12px}.card{padding:16px}header{padding:19px}.controls{width:100%}select{flex:1}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+ <div class="brand"><div class="logo" aria-hidden="true">⚽</div><div><h1>FOOT LIVE</h1><p id="tagline">دليل المشاهدة القانونية المجانية في إيطاليا</p></div></div>
+ <div class="controls"><select id="language" aria-label="Language"><option value="ar">العربية</option><option value="it">Italiano</option><option value="en">English</option></select><button id="install" class="install">تثبيت التطبيق</button></div>
+</header>
+<div class="notice" id="notice" role="note">بيانات أولية مستندة إلى تقرير 2 نوفمبر 2026 وليست تحققاً حياً من جدول البث. راجع المصدر الرسمي قبل المباراة. لا يستضيف Foot Live أي بث.</div>
+<div class="section-head"><div><h2 id="heading">مصادر المشاهدة المجانية</h2><p id="subheading">المحتوى المتاح للمشاهدين في إيطاليا</p></div><div class="status"><span class="dot"></span><span id="status">آخر مراجعة للمحتوى: 2 نوفمبر 2026</span></div></div>
+<div class="filters" id="filters">
+ <button class="filter active" data-filter="all" id="f-all">الكل</button>
+ <button class="filter" data-filter="match" id="f-match">مباراة مختارة</button>
+ <button class="filter" data-filter="competition" id="f-competition">بطولة مجانية</button>
+ <button class="filter" data-filter="account" id="f-account">مجاني بحساب</button>
+</div>
+<main class="grid" id="cards">
+<article class="card" data-kind="match">
+ <div class="card-top"><span class="provider">TV8</span><span class="pill limited" data-t="matchTag">مباراة مختارة مجانية</span></div>
+ <h3 data-t="tvTitle">لايبزيغ × مانشستر سيتي</h3><div class="sub" data-t="tvSub">دوري أبطال أوروبا · 4 نوفمبر 2026 · 21:00 بتوقيت إيطاليا (بحسب التقرير)</div>
+ <ul class="details"><li data-t="tv1">مجانية على القناة المفتوحة للمباراة المختارة.</li><li data-t="tv2">ليست كل مباريات البطولة مجانية.</li><li data-t="tv3">السوق المستهدف إيطاليا؛ التوفر خارجها غير مؤكد.</li><li data-t="tv4">تفاصيل التسجيل والإعلانات في البث الرقمي غير مؤكدة.</li></ul>
+ <div class="meta" data-t="tvMeta">تحقق من جدول TV8 الرسمي في يوم المباراة. البث الرقمي قد يخضع لقيود إقليمية.</div>
+ <div class="links"><a href="https://www.tv8.it/" target="_blank" rel="noopener">TV8 — <span data-t="site">الموقع الرسمي</span></a><a href="https://www.tv8.it/streaming" target="_blank" rel="noopener" data-t="tvStream">البث الرسمي</a></div>
+</article>
+<article class="card" data-kind="competition">
+ <div class="card-top"><span class="provider">Mediaset Infinity / SportMediaset</span><span class="pill" data-t="competitionTag">بطولة مجانية</span></div>
+ <h3 data-t="cupTitle">كأس إيطاليا 2026/27</h3><div class="sub" data-t="cupSub">جميع مباريات البطولة وفق الحقوق المعلنة في التقرير السابق؛ تحقق من الجدول الرسمي.</div>
+ <ul class="details"><li data-t="cup1">إنتر × جنوى — 1 ديسمبر 2026، 21:00.</li><li data-t="cup2">كومو × كريمونيزي — 2 ديسمبر 2026، 21:00.</li><li data-t="cup3">يوفنتوس × ساسولو — 3 ديسمبر 2026، 21:00.</li><li data-t="cup4">السوق المستهدف إيطاليا؛ التوفر خارجها غير مؤكد.</li><li data-t="cup5">قد يتطلب الوصول الرقمي إنشاء حساب؛ راجع شروط المنصة.</li></ul>
+ <div class="meta" data-t="cupMeta">الحقوق لا تعني أن كل مباراة متاحة على كل منصة رقمية؛ راجع جدول الناقل.</div>
+ <div class="links"><a href="https://mediasetinfinity.mediaset.it/" target="_blank" rel="noopener">Mediaset Infinity — <span data-t="site">الموقع الرسمي</span></a><a href="https://www.sportmediaset.mediaset.it/" target="_blank" rel="noopener">SportMediaset — <span data-t="site">الموقع الرسمي</span></a></div>
+</article>
+<article class="card" data-kind="account">
+ <div class="card-top"><span class="provider">DAZN Free</span><span class="pill" data-t="accountTag">مجاني بحساب</span></div>
+ <h3 data-t="daznTitle">مباريات مختارة من عدة بطولات</h3><div class="sub">Serie B · LaLiga · Serie A Women · Frauen-Bundesliga</div>
+ <ul class="details"><li data-t="d1">يتطلب إنشاء حساب مجاني.</li><li data-t="d2">المحتوى المجاني يتغير بحسب الحقوق وجدول المباريات.</li><li data-t="d3">قد تتاح مباريات مختارة من Serie A للرجال؛ لا يوجد موعد مباراة محدد مؤكد هنا.</li><li data-t="d4">التوفر خارج إيطاليا غير مضمون وقد تنطبق قيود جغرافية.</li><li data-t="d5">قد يتضمن العرض إعلانات؛ راجع شروط المنصة.</li></ul>
+ <div class="meta" data-t="dMeta">تحقق من ظهور المباراة دون رمز القفل داخل DAZN Italia قبل موعدها.</div>
+ <div class="links"><a href="https://www.dazn.com/en-IT" target="_blank" rel="noopener">DAZN Italia — <span data-t="site">الموقع الرسمي</span></a><a href="https://www.dazn.com/en-IT/help" target="_blank" rel="noopener" data-t="help">مركز المساعدة</a></div>
+</article>
+</main>
+<div class="empty" id="empty" data-t="empty">لا توجد بطاقات ضمن هذا التصنيف.</div>
+<footer id="footer">Foot Live دليل معلوماتي، وليس خدمة بث. الروابط المضافة مواقع رسمية فقط. قد تتغير الحقوق والمواعيد والقيود؛ تحقق دائماً من الناقل. هذه النسخة لا تجري تحديثاً تلقائياً لحقوق البث.</footer>
+</div>
+<script>
+const dict={
+ar:{tagline:"دليل المشاهدة القانونية المجانية في إيطاليا",notice:"بيانات أولية مستندة إلى تقرير 2 نوفمبر 2026 وليست تحققاً حياً من جدول البث. راجع المصدر الرسمي قبل المباراة. لا يستضيف Foot Live أي بث.",heading:"مصادر المشاهدة المجانية",subheading:"المحتوى المتاح للمشاهدين في إيطاليا",status:"آخر مراجعة للمحتوى: 2 نوفمبر 2026",all:"الكل",match:"مباراة مختارة",competition:"بطولة مجانية",account:"مجاني بحساب",matchTag:"مباراة مختارة مجانية",tvTitle:"لايبزيغ × مانشستر سيتي",tvSub:"دوري أبطال أوروبا · 4 نوفمبر 2026 · 21:00 بتوقيت إيطاليا (بحسب التقرير)",tv1:"مجانية على القناة المفتوحة للمباراة المختارة.",tv2:"ليست كل مباريات البطولة مجانية.",tv3:"السوق المستهدف إيطاليا؛ التوفر خارجها غير مؤكد.",tv4:"تفاصيل التسجيل والإعلانات في البث الرقمي غير مؤكدة.",tvMeta:"تحقق من جدول TV8 الرسمي في يوم المباراة. البث الرقمي قد يخضع لقيود إقليمية.",site:"الموقع الرسمي",tvStream:"البث الرسمي",competitionTag:"بطولة مجانية",cupTitle:"كأس إيطاليا 2026/27",cupSub:"جميع مباريات البطولة وفق الحقوق المعلنة في التقرير السابق؛ تحقق من الجدول الرسمي.",cup1:"إنتر × جنوى — 1 ديسمبر 2026، 21:00.",cup2:"كومو × كريمونيزي — 2 ديسمبر 2026، 21:00.",cup3:"يوفنتوس × ساسولو — 3 ديسمبر 2026، 21:00.",cup4:"السوق المستهدف إيطاليا؛ التوفر خارجها غير مؤكد.",cup5:"قد يتطلب الوصول الرقمي إنشاء حساب؛ راجع شروط المنصة.",cupMeta:"الحقوق لا تعني أن كل مباراة متاحة على كل منصة رقمية؛ راجع جدول الناقل.",accountTag:"مجاني بحساب",daznTitle:"مباريات مختارة من عدة بطولات",d1:"يتطلب إنشاء حساب مجاني.",d2:"المحتوى المجاني يتغير بحسب الحقوق وجدول المباريات.",d3:"قد تتاح مباريات مختارة من Serie A للرجال؛ لا يوجد موعد مباراة محدد مؤكد هنا.",d4:"التوفر خارج إيطاليا غير مضمون وقد تنطبق قيود جغرافية.",d5:"قد يتضمن العرض إعلانات؛ راجع شروط المنصة.",dMeta:"تحقق من ظهور المباراة دون رمز القفل داخل DAZN Italia قبل موعدها.",help:"مركز المساعدة",empty:"لا توجد بطاقات ضمن هذا التصنيف.",footer:"Foot Live دليل معلوماتي، وليس خدمة بث. الروابط المضافة مواقع رسمية فقط. قد تتغير الحقوق والمواعيد والقيود؛ تحقق دائماً من الناقل. هذه النسخة لا تجري تحديثاً تلقائياً لحقوق البث.",install:"تثبيت التطبيق"},
+it:{tagline:"Guida alla visione legale e gratuita in Italia",notice:"Dati preliminari basati sul rapporto del 2 novembre 2026; non sono una verifica in tempo reale del palinsesto. Controllare la fonte ufficiale prima della partita. Foot Live non ospita streaming.",heading:"Fonti per la visione gratuita",subheading:"Contenuti destinati al pubblico in Italia",status:"Ultima revisione dei contenuti: 2 novembre 2026",all:"Tutti",match:"Partita selezionata",competition:"Competizione gratuita",account:"Gratis con account",matchTag:"Partita selezionata gratis",tvTitle:"Lipsia × Manchester City",tvSub:"Champions League · 4 novembre 2026 · ore 21:00 (secondo il rapporto)",tv1:"In chiaro per la partita selezionata.",tv2:"Non tutte le partite della competizione sono gratuite.",tv3:"Mercato previsto: Italia; disponibilità all'estero non confermata.",tv4:"Dettagli su registrazione e pubblicità nello streaming digitale non confermati.",tvMeta:"Verificare il palinsesto ufficiale TV8 il giorno della partita. Lo streaming può avere restrizioni territoriali.",site:"sito ufficiale",tvStream:"Streaming ufficiale",competitionTag:"Competizione gratuita",cupTitle:"Coppa Italia 2026/27",cupSub:"Tutte le partite secondo i diritti indicati nel rapporto precedente; verificare il calendario ufficiale.",cup1:"Inter × Genoa — 1 dicembre 2026, ore 21:00.",cup2:"Como × Cremonese — 2 dicembre 2026, ore 21:00.",cup3:"Juventus × Sassuolo — 3 dicembre 2026, ore 21:00.",cup4:"Mercato previsto: Italia; disponibilità all'estero non confermata.",cup5:"Lo streaming può richiedere un account; consultare le condizioni.",cupMeta:"I diritti non garantiscono che ogni partita sia disponibile su ogni piattaforma digitale; controllare il palinsesto.",accountTag:"Gratis con account",daznTitle:"Partite selezionate di varie competizioni",d1:"È necessario creare un account gratuito.",d2:"I contenuti gratuiti variano in base ai diritti e al calendario.",d3:"Potrebbero essere disponibili partite selezionate di Serie A maschile; qui non è confermata una partita specifica.",d4:"Disponibilità all'estero non garantita; possono applicarsi restrizioni geografiche.",d5:"Potrebbero esserci annunci pubblicitari; consultare le condizioni.",dMeta:"Verificare che l'evento appaia senza lucchetto su DAZN Italia.",help:"Centro assistenza",empty:"Nessuna scheda in questa categoria.",footer:"Foot Live è una guida informativa, non un servizio di streaming. Sono inclusi solo link ufficiali. Diritti, orari e restrizioni possono cambiare: verificare sempre con l'emittente. Questa versione non aggiorna automaticamente i diritti.",install:"Installa app"},
+en:{tagline:"A guide to legal free football viewing in Italy",notice:"Preliminary data based on the November 2, 2026 report; not a live schedule or rights check. Verify with the official source before kickoff. Foot Live does not host streams.",heading:"Free viewing sources",subheading:"Content intended for viewers in Italy",status:"Content last reviewed: November 2, 2026",all:"All",match:"Selected match",competition:"Free competition",account:"Free account",matchTag:"Selected free match",tvTitle:"RB Leipzig vs Manchester City",tvSub:"Champions League · November 4, 2026 · 21:00 Italy time (per report)",tv1:"Free-to-air for this selected match.",tv2:"Not every match in the competition is free.",tv3:"Intended market: Italy; access abroad is unconfirmed.",tv4:"Digital-stream registration and advertising details are unconfirmed.",tvMeta:"Check TV8's official schedule on match day. Digital streaming may be region-restricted.",site:"official site",tvStream:"Official stream",competitionTag:"Free competition",cupTitle:"Coppa Italia 2026/27",cupSub:"All tournament matches according to rights stated in the previous report; verify the official schedule.",cup1:"Inter vs Genoa — December 1, 2026, 21:00.",cup2:"Como vs Cremonese — December 2, 2026, 21:00.",cup3:"Juventus vs Sassuolo — December 3, 2026, 21:00.",cup4:"Intended market: Italy; access abroad is unconfirmed.",cup5:"Digital access may require an account; check platform terms.",cupMeta:"Rights do not guarantee every match is available on every digital platform; check the broadcaster schedule.",accountTag:"Free account",daznTitle:"Selected matches across competitions",d1:"A free account is required.",d2:"Free content changes with rights and match schedules.",d3:"Selected men's Serie A matches may be available; no specific fixture is confirmed here.",d4:"Availability abroad is not guaranteed; geographic restrictions may apply.",d5:"Advertising may be included; check platform terms.",dMeta:"Check that the event appears without a lock icon on DAZN Italia.",help:"Help centre",empty:"No cards in this category.",footer:"Foot Live is an information guide, not a streaming service. Official links only. Rights, schedules and restrictions can change; always verify with the broadcaster. This version does not automatically update broadcast rights.",install:"Install app"}
+};
+const langEl=document.getElementById('language'), installBtn=document.getElementById('install');
+function setLanguage(lang){const d=dict[lang];document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.querySelectorAll('[data-t]').forEach(el=>{const k=el.dataset.t;if(d[k])el.textContent=d[k]});['tagline','notice','heading','subheading','status','footer'].forEach(k=>{const el=document.getElementById(k);if(el)el.textContent=d[k]});document.querySelectorAll('[data-filter]').forEach(b=>b.textContent=d[b.dataset.filter]);installBtn.textContent=d.install;localStorage.setItem('footlive-lang',lang)}
+langEl.value=localStorage.getItem('footlive-lang')||'ar';setLanguage(langEl.value);langEl.addEventListener('change',e=>setLanguage(e.target.value));
+document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===btn));let shown=0;document.querySelectorAll('.card').forEach(card=>{const show=btn.dataset.filter==='all'||card.dataset.kind===btn.dataset.filter;card.hidden=!show;if(show)shown++});document.getElementById('empty').style.display=shown?'none':'block'}));
+let installPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installBtn.classList.add('show')});installBtn.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installBtn.classList.remove('show')});
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body></html>
